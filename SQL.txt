@@ -1,0 +1,53 @@
+
+/* Select all records from Employee database*/
+SELECT * FROM Employee;
+
+/* Provide context to "Branches" table. Column names, constraints, etc. */
+DESCRIBE Branches;
+
+/* Update "Branches" table and rename to "Department" */
+ALTER TABLE Branches
+RENAME TO Department;
+
+/* Provide context to "Department" table.  Column names, constraints, etc. */
+DESCRIBE Department;
+
+/* Insert records into the Department table */
+INSERT INTO Department VALUES
+	(1, 'Accounting'),
+	(2, 'Human Resources'),
+	(3, 'Information Systems'),
+	(4, 'Marketing');
+
+/* Select all records from the Department table showing updated values added */	
+SELECT * FROM Department;
+
+/* Join Employee on Department, displaying all records where employees work in department "1" */
+SELECT First_Name, Last_Name, Department.Department_Name from Employee inner join Department on Employee.Department_ID = Department.Department_ID WHERE Employee.Department_ID = 1;
+
+/* Join Employe on Department, displaying all records where employees work in department "2" */
+SELECT First_Name, Last_Name, Department.Department_Name from Employee inner join Department on Employee.Department_ID = Department.Department_ID WHERE Employee.Department_ID = 2;
+
+/* Join Employe on Department, displaying all records where employees work in department "3" */
+SELECT First_Name, Last_Name, Department.Department_Name from Employee inner join Department on Employee.Department_ID = Department.Department_ID WHERE Employee.Department_ID = 3;
+
+/* Join Employe on Department, displaying all records where employees work in department "4" */
+SELECT First_Name, Last_Name, Department.Department_Name from Employee inner join Department on Employee.Department_ID = Department.Department_ID WHERE Employee.Department_ID = 4;
+
+/* Insert records into the Employee table */
+INSERT INTO Employee VALUES
+	(108, 'Sal', 'Johnson', 2, 'Exempt', 'Full-Time', 70000),
+	(109, 'Gina', 'Wellsley', 3, 'Non-Exempt', 'Full-Time', 92000),
+	(110, 'Mike', 'Jonas', 1, 'NULL', 'Full-Time', 95000),
+	(111, 'Fred', 'Smith', 2, 'Exempt', 'Full-Time', 75000),
+	(112, 'Chris', 'Johnson', 4, 'Non-Exempt', 'Full-Time', 95000),
+	(113, 'Dana', 'Homes', 2, 'Exempt', 'Part-Time', 35000),
+	(114, 'Dave', 'Marble', 3, 'Exempt', 'Full-Time', 90000),
+	(115, 'Bill', 'Driver', 1, 'Exempt', 'Full-Time', 65000),
+	(116, 'Kim', 'Philips', 2, 'Non-Exempt', 'Full-Time', 90000),
+	(117, 'Bob', 'Packard', 1, 'Exempt', 'Full-Time', 90000);
+
+/* Select all records from the Employee table showing updated values added */	
+SELECT * FROM Employee;
+
+
